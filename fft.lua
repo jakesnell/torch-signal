@@ -158,7 +158,9 @@ end
    Output matches with matlab output
 ]]--
 function signal.fft2(input)
-   return fft2Generic(input, fftw.FORWARD)
+   local norm = input:clone()
+   norm:div(math.sqrt(input:size(1)) * math.sqrt(input:size(2)))
+   return fft2Generic(norm, fftw.FORWARD)
 end
 
 --[[
@@ -169,7 +171,9 @@ end
    Output matches with matlab output
 ]]--
 function signal.ifft2(input)
-   return fft2Generic(input, fftw.BACKWARD)
+   local norm = input:clone()
+   norm.mul(math.sqrt(input:size(1)) * math.sqrt(input:size(2)))
+   return fft2Generic(norm, fftw.BACKWARD)
 end
 
 --[[

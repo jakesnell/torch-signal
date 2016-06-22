@@ -2,7 +2,7 @@ package = "signal"
 version = "scm-1"
 
 source = {
-   url = "git://github.com/soumith/torch-signal.git"
+   url = "git://github.com/jakesnell/torch-signal.git"
 }
 
 description = {
@@ -10,7 +10,7 @@ description = {
    detailed = [[
    A signal processing toolbox for Torch-7
    ]],
-   homepage = "https://github.com/soumith/torch-signal",
+   homepage = "https://github.com/jakesnell/torch-signal",
    license = "RWTFPL"
 }
 
