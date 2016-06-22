@@ -172,7 +172,7 @@ end
 ]]--
 function signal.ifft2(input)
    local norm = input:clone()
-   norm.mul(math.sqrt(input:size(1)) * math.sqrt(input:size(2)))
+   norm:mul(math.sqrt(input:size(1)) * math.sqrt(input:size(2)))
    return fft2Generic(norm, fftw.BACKWARD)
 end
 
